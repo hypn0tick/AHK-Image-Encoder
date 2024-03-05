@@ -318,8 +318,6 @@ selectImages(neutron, event) {
 }
 
 confirmationDialogue(filePath) {
-  content := ""
-
   html := '<div class="container">'
   ;html .= NeutronWindow.FormatHTML(content)
   html .= "Import file created successfully!<br><br>"
@@ -386,6 +384,10 @@ confirmationDialogue(filePath) {
   confirmationGui := NeutronWindow(html, css,, "File Created Successfully!")
     .OnEvent("Close", (confirmationGui) => confirmationGui.Hide())
     .Show("w640 h560", "Template")
+}
+
+exit(*) {
+  ExitApp()
 }
 
 start(*) {
